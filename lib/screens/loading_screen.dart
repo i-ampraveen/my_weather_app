@@ -57,7 +57,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
             GlowingProgressIndicator(
               child: locationIcon,
             ),
-            loadingScreenText,
+            FindMe(
+                whatToDoOnPressed: () {
+                  Permission.locationWhenInUse.request();
+                }
+            ),
           ],
         ),
       ),

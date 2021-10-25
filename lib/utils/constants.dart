@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-Text loadingScreenText = Text('Where are you..?',
-  style: GoogleFonts.kaushanScript(
-    fontSize: 22.0
-  ),
+Text loadingScreenText = Text(
+  'Where are you..?',
+  style: GoogleFonts.kaushanScript(fontSize: 22.0),
 );
 
 Icon locationIcon = const Icon(
-    Icons.location_on_rounded,
+  Icons.location_on_rounded,
   size: 58.0,
 );
 
@@ -48,13 +47,18 @@ void handlePermission(BuildContext context) async {
 }
 
 class FindMe extends StatelessWidget {
-  const FindMe({Key? key}) : super(key: key);
+  final Function whatToDoOnPressed;
+
+  const FindMe({required this.whatToDoOnPressed});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {  }, 
-      child: const Text(''),
+      onPressed: whatToDoOnPressed(),
+      child: Text(
+        'Find Me..!',
+        style: GoogleFonts.kaushanScript(fontSize: 22.0),
+      ),
     );
   }
 }
