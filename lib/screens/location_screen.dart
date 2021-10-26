@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:my_weather_app/services/weather_model.dart';
 
 class LocationScreen extends StatefulWidget {
@@ -44,6 +45,15 @@ class _LocationScreenState extends State<LocationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage(''),
+              fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
   }
 }

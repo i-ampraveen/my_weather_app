@@ -18,7 +18,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void initState() {
     super.initState();
     _checkPermission();
-    //getLocationData();
   }
 
   Future<void> _checkPermission() async {
