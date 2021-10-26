@@ -11,6 +11,7 @@ Text loadingScreenText = Text(
 Icon locationIcon = const Icon(
   Icons.location_on_rounded,
   size: 58.0,
+  color: Colors.green,
 );
 
 void handlePermission(BuildContext context) async {
@@ -49,15 +50,21 @@ void handlePermission(BuildContext context) async {
 class FindMe extends StatelessWidget {
   final Function whatToDoOnPressed;
 
-  const FindMe({required this.whatToDoOnPressed});
+  FindMe({required this.whatToDoOnPressed});
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: whatToDoOnPressed(),
-      child: Text(
+    return ElevatedButton(
+      onPressed: () => whatToDoOnPressed(),
+      style: ElevatedButton.styleFrom(
+        primary: Colors.green,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
+      child: const Text(
         'Find Me..!',
-        style: GoogleFonts.kaushanScript(fontSize: 22.0),
+        style: TextStyle(fontSize: 22.0),
       ),
     );
   }
